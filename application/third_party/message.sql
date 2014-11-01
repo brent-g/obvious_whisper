@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `message` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `date_expiry` datetime NOT NULL,
+  `date_created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_expiry` TIMESTAMP NOT NULL,
   `message` text CHARACTER SET utf8 NOT NULL,
   `user_ip` int(11) NOT NULL,
   `url` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
