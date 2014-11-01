@@ -7,7 +7,7 @@
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
-SET SQL_MODE = "ALLOW_INVALID_DATES";
+SET SQL_MODE = "TRADITIONAL";
 SET time_zone = "+00:00";
 
 

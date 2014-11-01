@@ -1,4 +1,4 @@
-<?
+<?php
 class Whisper extends CI_Model 
 {
 	
