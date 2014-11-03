@@ -22,7 +22,7 @@ $(function(){
 		}
 	})
 
-	var max_chars = 30;
+	var max_chars = 40;
 	$('#message').keyup(function(){
 		var char_count = $(this).val().length;
 		if (char_count >= max_chars)
@@ -98,5 +98,5 @@ function whisper()
 		<input id="whisper" type="button" name="whisper" value="Whisper!" onclick="validate_form(); return false;" />
 	</form>
 	<input id="url" type="text" class="dontshow" onclick="this.select();"/>
-	<div id="char_count">Characters Remaining: 30</div>
+	<div id="char_count">Characters Remaining: 40</div>
 </div>
