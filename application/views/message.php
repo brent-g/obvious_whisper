@@ -13,7 +13,7 @@
 		    html += "<span>" + words[i] + ((i+1) === words.length ? "" : " ") + "</span>";
 		};
 		$el.html(html).children().hide().each(function(i){
-		  $(this).delay(i*200).fadeIn(900);
+		  $(this).delay(i*200).fadeIn(800);
 		});
 		$el.find("span").promise().done(function(){
 		    $el.text(function(i, text){
