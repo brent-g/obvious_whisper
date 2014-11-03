@@ -1,9 +1,3 @@
-<style>
-	
-
-</style>
-<script type="text/javascript">
-
 //onload
 $(function(){
 	// the user can press enter to submit the form
@@ -15,26 +9,14 @@ $(function(){
 			event.preventDefault();
 			// validate our form
 			validate_form();
+			console.log('key down');
 		} 
 		else 
 		{
+			console.log('we are typing letters');
 			$('#message').removeClass('error_shadow');
 		}
 	})
-
-	var max_chars = 30;
-	$('#message').keyup(function(){
-		var char_count = $(this).val().length;
-		if (char_count >= max_chars)
-		{
-			$('#char_count').text('Zero Characters Remaining!');
-		} 
-		else
-		{
-			var chars_remaining = max_chars - char_count;
-			$('#char_count').text('Characters Remaining: ' + chars_remaining);
-		}
-	});
 });
 
 function validate_form()
@@ -87,16 +69,3 @@ function whisper()
 		}
 	});
 }
-
-</script>
-<div id="content">
-	<h3>Welcome to Obvious Whisper</h3>
-	<? echo form_open('welcome/create'); ?>
-		<input id="message" type="text" name="message" placeholder="Type your message here" />
-		<br />
-		<br />
-		<input id="whisper" type="button" name="whisper" value="Whisper!" onclick="validate_form(); return false;" />
-	</form>
-	<input id="url" type="text" class="dontshow" onclick="this.select();"/>
-	<div id="char_count">Characters Remaining: 30</div>
-</div>
