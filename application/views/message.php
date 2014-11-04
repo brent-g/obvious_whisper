@@ -22,20 +22,7 @@
 		});
 	});
 </script>
-<style type="text/css">
-.centered{
-	width:400px;
-    height:auto;
-	    position:absolute;
-    left:50%;
-    top:50%;
-    margin:-100px 0 0 -150px;
-    text-align: center;
-    font-size: 28px;
-}
-</style>
-<div class="centered">
-
-<div id="message"><?php echo(htmlspecialchars($message));?></div>
-<input id="reply" type="button" name="reply" value="reply" onclick="self.location='<?php echo site_url(); ?>'" style="display:none;"/>
+	<div class="centered">
+	<div id="message"><?php echo(htmlspecialchars($message));?></div>
+	<input id="reply" type="button" name="reply" value="reply" onclick="self.location='<?php echo site_url(); ?>'" style="display:none;"/>
 </div>
