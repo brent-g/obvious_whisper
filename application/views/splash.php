@@ -71,11 +71,10 @@ function whisper()
 		}
 	});
 }
-
 </script>
 <div id="content">
 	<h3>Welcome to Obvious Whisper</h3>
-	<? echo form_open('welcome/create'); ?>
+	<?php echo form_open('welcome/create'); ?>
 		<input id="message" type="text" name="message" maxlength="40" placeholder="Type your message here" />
 		<br />
 		<br />

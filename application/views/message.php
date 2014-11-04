@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
 	var msg = new SpeechSynthesisUtterance('<?php echo($message);?>');
 	//var voices = speechSynthesis.getVoices();
    	window.speechSynthesis.speak(msg);
@@ -22,7 +22,7 @@
 		});
 	});
 </script>
-<style>
+<style type="text/css">
 .centered{
 	width:400px;
     height:auto;
