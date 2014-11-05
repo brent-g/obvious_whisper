@@ -20,6 +20,6 @@
 					<img src="<?php echo site_url('assets/images/logo.png'); ?>" id="logo" alt="">
 				</a>
 			</div>
-			<div id="my_name">Click &#8594; <a href="https://github.com/brent-g/">brent-G</a></div>
+			<div id="my_name">&#8680; <a href="https://github.com/brent-g/">brent-G</a> &#8678;</div>
 		</div>
 	
