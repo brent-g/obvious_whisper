@@ -24,8 +24,9 @@ class Create_whisper extends CI_Controller {
 		else
 		{
 			$url = $this->whisper->createWhisper();
+			$full_url = base_url() . 'o/' . $url;
 			$return_data = array (
-				"url" => $url
+				"url" => $full_url
 			);
 			echo json_encode($return_data);
 		}

@@ -7,29 +7,19 @@
 		<meta name="author" content="Brent Godsoe">
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css' />
-		<link href="<?php echo site_url('assets'); ?>/css/main.css" rel="stylesheet" type="text/css" />
+		<link rel="shortcut icon" href="<?php echo site_url('assets'); ?>/images/favicon.ico" type="image/x-icon" />
+		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Titillium+Web' />
+		<link rel="stylesheet" type="text/css" href="<?php echo site_url('assets'); ?>/css/main.css"/>
 		<script type="text/javascript" src="<?php echo site_url('assets'); ?>/js/jquery.js"></script>
-		<style type="text/css">
-			html { 
-			 /* background: url(images/bg.jpg) no-repeat center center fixed; 
-			  -webkit-background-size: cover;
-			  -moz-background-size: cover;
-			  -o-background-size: cover;
-			  background-size: cover;*/
-			}
-			.centered {
-				width:400px;
-			    height:auto;
-				    position:absolute;
-			    left:50%;
-			    top:50%;
-			    margin:-100px 0 0 -150px;
-			    text-align: center;
-			    font-size: 28px;
-			}
-		</style>
+		<script type="text/javascript" src="<?php echo site_url('assets'); ?>/js/main.js"></script>
 	</head>
 	<body>
-		<div id="header"></div>
+		<div id="header">
+			<div id="logo">
+				<a href="<?php echo site_url(); ?>">
+					<img src="<?php echo site_url('assets/images/logo.png'); ?>" id="logo" alt="">
+				</a>
+			</div>
+			<div id="my_name">Created By: <a href="https://github.com/brent-g/">brent-G</a></div>
+		</div>
 	

@@ -1,28 +1,36 @@
 <script type="text/javascript">
-	var msg = new SpeechSynthesisUtterance('<?php echo($message);?>');
-	//var voices = speechSynthesis.getVoices();
-   	window.speechSynthesis.speak(msg);
-
    	$(function(){
 	   	var $el = $("#message:first");
 	   	var text = $.trim($el.text());
 	    // split the words by spaces
 	    var words = text.split(" "), html = "";
 
+	    // get the total word count
 		for (var i = 0; i < words.length; i++) {
-		    html += "<span>" + words[i] + ((i+1) === words.length ? "" : " ") + "</span>";
+		    html += "<span>" + words[i] + ((i+1) === words.length ? "" : " ") + "</span>"; // wrap each word in span tags and stuff it into the html var
 		};
+		// hide all of the words
 		$el.html(html).children().hide().each(function(i){
-		  $(this).delay(i*250).fadeIn(500,'swing',function(){$('#reply').delay(300).fadeIn('slow')});
+			// slowly start to fade them in individually
+			$(this).delay(i*250).fadeIn(500,'swing',function(){
+		  		$('#reply').delay(300).fadeIn('slow'); // fade in the reply button after all text has been displayed
+		  	});
 		});
+
 		$el.find("span").promise().done(function(){
 		    $el.text(function(i, text){
-		       return $.trim(text, fi);
+		       return $.trim(text, i);
 		    });            
 		});
 	});
+   	
+	var msg = new SpeechSynthesisUtterance('<?php echo($message);?>'); // initialize the built in speech functionality in chrome and safari -- send it out message
+   	window.speechSynthesis.speak(msg); // speech the message!
+
 </script>
-	<div class="centered">
-	<div id="message"><?php echo(htmlspecialchars($message));?></div>
-	<input id="reply" type="button" name="reply" value="reply" onclick="self.location='<?php echo site_url(); ?>'" style="display:none;"/>
+<div id="wrapper" style="display:block;">
+	<div id="content">
+		<div id="message"><?php echo(htmlspecialchars($message));?></div>
+		<input id="reply" type="button" name="reply" value="reply" onclick="self.location='<?php echo site_url(); ?>'" style="display:none;"/>
+	</div>
 </div>

@@ -14,13 +14,11 @@ class Find_whisper extends CI_Controller {
 		$url = $this->uri->segment(2); // create a var of the second uri parameter
 		$message = $this->whisper->LoadWhisper($url);
 		$data = array();
-		$data['message'] = $message['message'];
+		$data['message'] = strip_quotes($message['message']);
 
 		// the message display page!
 		$this->load->view('components/header');
 		$this->load->view('message', $data, false);
 		$this->load->view('components/footer');
-		//echo quotes_to_entities($message['message']);
-
 	}
 }
