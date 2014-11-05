@@ -145,3 +145,6 @@ font-size:12px;
 color:#EFEFEF;
 float:right
 }
+div#message {
+padding-top:100px;
+}
