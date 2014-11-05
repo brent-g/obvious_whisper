@@ -16,9 +16,23 @@ class Find_whisper extends CI_Controller {
 		$data = array();
 		$data['message'] = strip_quotes($message['message']);
 
-		// the message display page!
+		if (empty($data['message']) || $data['message'] === FALSE)
+		{
+			self::error();
+		}
+		else
+		{
+			// the message display page!
+			$this->load->view('components/header');
+			$this->load->view('message', $data, false);
+			$this->load->view('components/footer');
+		}
+	}
+
+	public function error()
+	{
 		$this->load->view('components/header');
-		$this->load->view('message', $data, false);
+		$this->load->view('error');
 		$this->load->view('components/footer');
 	}
 }

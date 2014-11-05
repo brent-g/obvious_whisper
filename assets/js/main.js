@@ -4,6 +4,8 @@ var max_chars = 40; // maximum characters a user can enter into the message fiel
 $(function(){
 
 	reset_form(); // start off with a fresh form!
+	$('#content').hide(); // hide so we can fade in!
+	$('#content').fadeIn('slow'); // nice fade in effect!
 
 	// the user can press enter to submit the form
 	$(window).keydown(function(event)
