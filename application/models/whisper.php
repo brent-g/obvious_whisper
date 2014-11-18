@@ -6,12 +6,12 @@ class Whisper extends CI_Model
 	{
 		$this->load->database();
 		$this->load->helper('string');
+		$user_ip = $_SERVER['REMOTE_ADDR']; // get the users IP
 	}
 	// create this whisper in the database
 	public function createWhisper()
 	{
 		$url = random_string('alnum', 8); // generate a random 8 character string 
-		$user_ip = $_SERVER['REMOTE_ADDR']; // get the users IP
 		$new_message = $this->input->post('message');
 		$data = array(
 			'message' 	=> $new_message,
@@ -33,13 +33,25 @@ class Whisper extends CI_Model
 		}
 		else
 		{
-			$sql_query = "SELECT message FROM message WHERE url = ? LIMIT 1";
+			$sql_query = "SELECT id, message FROM message WHERE url = ? LIMIT 1";
 			$message = $this->db->query($sql_query, array($url));
 			if ($message->num_rows() > 0)
 			{
+				self::saveView($message->row_array());
 				return $message->row_array();
 			}
 		}
+	}
+
+	// track who has view a message
+	public function trackView($message_data)
+	{
+		$data = array(
+			'user_ip'		=> $user_ip // client_ip
+			'message_id'	=> $message_data['id']	// message_id
+		);
+
+		$this->db->insert('message_view', $data); // create a record 
 	}
 }
 ?>
