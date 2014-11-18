@@ -37,7 +37,7 @@ class Whisper extends CI_Model
 			$message = $this->db->query($sql_query, array($url));
 			if ($message->num_rows() > 0)
 			{
-				self::saveView($message->row_array());
+				self::trackView($message->row_array());
 				return $message->row_array();
 			}
 		}
