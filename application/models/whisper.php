@@ -1,16 +1,15 @@
 <?php
 class Whisper extends CI_Model 
 {
-	
 	public function __construct()
 	{
 		$this->load->database();
 		$this->load->helper('string');
-		$user_ip = $_SERVER['REMOTE_ADDR']; // get the users IP
 	}
 	// create this whisper in the database
 	public function createWhisper()
 	{
+		$user_ip = $_SERVER['REMOTE_ADDR']; // get the users IP
 		$url = random_string('alnum', 8); // generate a random 8 character string 
 		$new_message = $this->input->post('message');
 		$data = array(
@@ -46,12 +45,13 @@ class Whisper extends CI_Model
 	// track who has view a message
 	public function trackView($message_data)
 	{
+		$user_ip = $_SERVER['REMOTE_ADDR']; // get the users IP
 		$data = array(
-			'user_ip'		=> $user_ip // client_ip
-			'message_id'	=> $message_data['id']	// message_id
+			'user_ip'		=> $user_ip,
+			'message_id'	=> $message_data['id']
 		);
 
-		$this->db->insert('message_view', $data); // create a record 
+		$this->db->insert('message_view_tracker', $data); // create a record 
 	}
 }
 ?>
