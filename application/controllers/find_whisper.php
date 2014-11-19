@@ -25,7 +25,9 @@ class Find_whisper extends CI_Controller {
 			// the message display page!
 			$this->load->view('components/header');
 			$this->load->view('message', $data, false);
-			$this->load->view('components/footer');
+			$this->load->helper('date');
+			$data['this_year'] = mdate('%Y'); // send the year to the footer
+			$this->load->view('components/footer',$data);
 		}
 	}
 
@@ -33,6 +35,7 @@ class Find_whisper extends CI_Controller {
 	{
 		$this->load->view('components/header');
 		$this->load->view('error');
-		$this->load->view('components/footer');
+		$data['this_year'] = mdate('%Y'); // send the year to the footer
+		$this->load->view('components/footer',$data);
 	}
 }
