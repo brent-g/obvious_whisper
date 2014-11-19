@@ -22,11 +22,18 @@
 		       return $.trim(text, i);
 		    });            
 		});
-	});
-   	
-	var msg = new SpeechSynthesisUtterance('<?php echo($message);?>'); // initialize the built in speech functionality in chrome and safari -- send it out message
-   	window.speechSynthesis.speak(msg); // speech the message!
+		
 
+
+	});
+
+	// speak the words!
+	if (window.SpeechSynthesisUtterance === undefined) {
+    	// Browser Not supported
+	} else {
+		var msg = new SpeechSynthesisUtterance('<?php echo($message);?>'); // initialize the built in speech functionality in chrome and safari -- send it out message
+		window.speechSynthesis.speak(msg); // speech the message!
+	}
 </script>
 <div id="wrapper" style="display:block;">
 	<div id="content">
