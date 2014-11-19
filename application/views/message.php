@@ -22,9 +22,6 @@
 		       return $.trim(text, i);
 		    });            
 		});
-		
-
-
 	});
 
 	// speak the words!
