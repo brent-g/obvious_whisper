@@ -1,3 +1,6 @@
-<footer>Obvious Whisper <?php echo date('Y'); ?></footer>
+<?php 
+$datestring = "Obvious Whisper %Y";
+?>
+<footer><?php echo mdate($datestring); ?></footer>
 </body>
 </html>

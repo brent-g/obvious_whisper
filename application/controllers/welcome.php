@@ -4,6 +4,7 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->helper('date');
 		$this->load->library('javascript');
 		$this->load->view('components/header');
 		$this->load->view('splash');
