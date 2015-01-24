@@ -1,6 +1,6 @@
 <!-- <div class="fullscreen background" style="background-image:url('http://i.imgur.com/kMWKv24.jpg');" data-img-width="1345" data-img-height="896"> -->
 	<div id="content">
-		<h3>Welcome to <img src="<?php echo site_url('assets/images/logo_black_no_icon.png'); ?>"></h3>
+		<h3>Welcome to <img src="<?php echo site_url('assets/images/logo_black_no_icon.png'); ?>" alt="Inline Logo"></h3>
 			<?php echo form_open('welcome/create'); ?>
 			<p>
 				<input id="message" type="text" name="message" maxlength="40" placeholder="Type your message here" />
