@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div id="header">
-				<a href="<?php echo site_url(); ?>">
+				<a href="http://obviouswhisper.com">
 					<img src="<?php echo site_url('assets/images/logo.png'); ?>" id="logo" alt="Logo">
 				</a>
 			<div id="my_name"><a href="https://github.com/brent-g/" target="_blank">&#8680; brent-G &#8678;</a></div>
